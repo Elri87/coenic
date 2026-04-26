@@ -8,8 +8,16 @@
       name="viewport"
     />
     <title>
-      Powder Coating Cape Town | COENIC
+      Powder Coating Cape Town | Durable Metal Finishes | Coenic Coatings
     </title>
+    <meta
+      name="description"
+      content="Powder coating services in Cape Town for gates, steel, automotive parts and industrial components. Durable finishes after sandblasting. Professional powder coaters at Welgelegen Farm, Bottelary Rd."
+    />
+    <meta
+      name="keywords"
+      content="powder coating Cape Town, powder coaters Cape Town, metal powder coating Cape Town, steel powder coating Cape Town, industrial powder coating Cape Town, gate powder coating Cape Town, automotive powder coating Cape Town, durable metal coating Cape Town, powder coating services Cape Town"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -131,11 +139,15 @@
       <nav
         class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20"
       >
-        <a
+         <a
           href="home.html"
-          class="text-2xl font-black text-[#2D3136] dark:text-[#F7F9FF] tracking-tighter uppercase font-headline"
+          class="inline-flex items-center"
         >
-          COENIC
+          <img
+            src="assets/img/home/CoenicLogo.png"
+            alt="Coenic logo"
+            class="h-12 w-auto"
+          />
         </a>
         <div
           class="hidden md:flex space-x-8 items-center"
@@ -154,16 +166,48 @@
             href="contact-us.html"
             class="bg-primary text-on-primary px-6 py-2 rounded-lg font-headline font-bold tracking-tight uppercase scale-95 active:scale-90 transition-transform hover:opacity-90"
           >
-            Get a Quote
+             Contact Us
           </a>
         </div>
         <div class="md:hidden">
-          <span
-            class="material-symbols-outlined text-on-surface"
-            >menu</span
+          <button
+            id="mobile-menu-button"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+            class="inline-flex items-center justify-center"
           >
+            <span
+              class="material-symbols-outlined text-on-surface"
+              >menu</span
+            >
+          </button>
         </div>
       </nav>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden px-8 pb-6"
+      >
+        <div class="bg-surface-container-low rounded-lg border border-outline-variant/20 p-4 flex flex-col gap-3">
+          <a
+            class="text-[#2D3136] opacity-90 hover:text-[#825500] transition-colors duration-300 font-headline font-bold tracking-tight uppercase"
+            href="sandblasting.html"
+            >Sandblasting</a
+          >
+          <a
+            class="text-[#2D3136] opacity-90 hover:text-[#825500] transition-colors duration-300 font-headline font-bold tracking-tight uppercase"
+            href="powder-coating.html"
+            >Powder Coating</a
+          >
+          <a
+            href="contact-us.html"
+            class="bg-primary text-on-primary px-4 py-3 rounded-lg font-headline font-bold tracking-tight uppercase text-center"
+          >
+             Contact Us
+          </a>
+        </div>
+      </div>
     </header>
     </header>
     <main class="pt-20">
@@ -1496,10 +1540,9 @@ class="text-primary font-bold uppercase tracking-widest text-xs mb-4 block track
           <p
             class="text-[#F7F9FF] opacity-60 font-body font-light tracking-wide text-sm max-w-sm mb-8 leading-relaxed"
           >
-            Transforming raw, rugged industrial
-            materials into pristine, high-value
-            assets through scientific preparation
-            and precision coating. Since 1992.
+            Cape Town Sandblasting & Powder Coating Services
+Welgelegen Farm, Steneveld Rd, Off Bottelary Rd
+Cape Town, Western Cape, South Africa, 7625
           </p>
           <div class="flex gap-6">
             <a
@@ -1550,13 +1593,7 @@ class="text-primary font-bold uppercase tracking-widest text-xs mb-4 block track
             <ul
               class="space-y-4 font-body font-light tracking-wide text-sm text-[#F7F9FF] opacity-60"
             >
-              <li>
-                <a
-                  class="text-[#F7F9FF] opacity-60 hover:text-[#E3A33F] transition-all duration-200 font-body font-light tracking-wide text-sm"
-                  href="contact-us.html"
-                  >Welgelegen farm, Steneveld rd, off Bottelary Rd, Cape Town, 7625</a
-                >
-              </li>
+              
               <li>
                 <a
                   class="text-[#F7F9FF] opacity-60 hover:text-[#E3A33F] transition-all duration-200 font-body font-light tracking-wide text-sm"
@@ -1590,11 +1627,45 @@ class="text-primary font-bold uppercase tracking-widest text-xs mb-4 block track
         </div>
       </div>
       <div
-        class="text-4xl font-black opacity-10 absolute bottom-4 right-4 text-[#E3A33F] uppercase tracking-tighter"
+        class="text-4xl font-headline font-[950] italic opacity-10 absolute bottom-4 right-4 text-[#E3A33F] uppercase tracking-tighter"
       >
         COENIC
       </div>
     </footer>
-    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        const closeMobileMenu = () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileMenuButton.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', String(isHidden));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((menuLink) => {
+          menuLink.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+            closeMobileMenu();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMobileMenu();
+          }
+        });
+      }
+    </script>
   </body>
 </html>

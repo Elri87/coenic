@@ -7,7 +7,15 @@
       content="width=device-width, initial-scale=1.0"
       name="viewport"
     />
-    <title>Contact Us - Alchemist Coatings</title>
+    <title>Contact Coenic Sandblasting & Powder Coating | Cape Town</title>
+    <meta
+      name="description"
+      content="Contact Coenic Sandblasting & Powder Coating in Cape Town. Located at Welgelegen Farm, Steneveld Rd off Bottelary Rd. Get quotes for sandblasting, rust removal and powder coating services."
+    />
+    <meta
+      name="keywords"
+      content="Coenic Cape Town, sandblasting Cape Town contact, powder coating Cape Town contact, sandblasting quote Cape Town, powder coating quote Cape Town, Welgelegen Farm sandblasting, Bottelary Rd sandblasting, Steneveld Rd Cape Town sandblasting"
+    />
     <link
       rel="icon"
       type="image/png"
@@ -136,11 +144,15 @@
       <nav
         class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20"
       >
-        <a
+         <a
           href="home.html"
-          class="text-2xl font-black text-[#2D3136] dark:text-[#F7F9FF] tracking-tighter uppercase font-headline"
+          class="inline-flex items-center"
         >
-          COENIC
+          <img
+            src="assets/img/home/CoenicLogo.png"
+            alt="Coenic logo"
+            class="h-12 w-auto"
+          />
         </a>
         <div
           class="hidden md:flex space-x-8 items-center"
@@ -159,16 +171,47 @@
             href="contact-us.html"
             class="text-[#2D3136] dark:text-[#F7F9FF] opacity-50 font-headline font-bold tracking-tight uppercase cursor-default pointer-events-none"
           >
-            Get a Quote
+             Contact Us
           </a>
         </div>
         <div class="md:hidden">
-          <span
-            class="material-symbols-outlined text-on-surface"
-            >menu</span
+          <button
+            id="mobile-menu-button"
+            type="button"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+            class="inline-flex items-center justify-center"
           >
+            <span
+              class="material-symbols-outlined text-on-surface"
+              >menu</span
+            >
+          </button>
         </div>
       </nav>
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden px-8 pb-6"
+      >
+        <div class="bg-surface-container-low rounded-lg border border-outline-variant/20 p-4 flex flex-col gap-3">
+          <a
+            class="text-[#2D3136] opacity-90 hover:text-[#825500] transition-colors duration-300 font-headline font-bold tracking-tight uppercase"
+            href="sandblasting.html"
+            >Sandblasting</a
+          >
+          <a
+            class="text-[#2D3136] opacity-90 hover:text-[#825500] transition-colors duration-300 font-headline font-bold tracking-tight uppercase"
+            href="powder-coating.html"
+            >Powder Coating</a
+          >
+          <span
+            class="text-[#2D3136] opacity-50 font-headline font-bold tracking-tight uppercase"
+          >
+            Contact Us
+          </span>
+        </div>
+      </div>
     </header>
     <!-- Main Content Canvas -->
     <main
@@ -287,7 +330,7 @@
             Request a Quote
           </h2>
           <form
-            class="flex flex-col gap-6 font-body"
+            class="flex flex-col gap-6 font-body" action="send.php" method="POST"
           >
             <div
               class="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -304,8 +347,10 @@
                 <input
                   class="ghost-border bg-surface-container-lowest text-on-surface p-4 rounded-sm focus:outline-none transition-all duration-300"
                   id="fullName"
+                  name="name"
                   placeholder="John Doe"
                   type="text"
+                  required
                 />
               </div>
               <!-- Phone Number -->
@@ -320,8 +365,10 @@
                 <input
                   class="ghost-border bg-surface-container-lowest text-on-surface p-4 rounded-sm focus:outline-none transition-all duration-300"
                   id="phone"
+                  name="phone"
                   placeholder="+27 XX XXX XXXX"
                   type="tel"
+                  required
                 />
               </div>
             </div>
@@ -337,8 +384,10 @@
               <input
                 class="ghost-border bg-surface-container-lowest text-on-surface p-4 rounded-sm focus:outline-none transition-all duration-300"
                 id="email"
+                name="email"
                 placeholder="john@example.com"
                 type="email"
+                required
               />
             </div>
             <!-- Service Type -->
@@ -360,6 +409,7 @@
                     name="serviceType"
                     type="radio"
                     value="sandblasting"
+                    required
                   />
                   <span
                     class="text-on-surface font-medium group-hover:text-primary transition-colors"
@@ -408,15 +458,17 @@
               <textarea
                 class="ghost-border bg-surface-container-lowest text-on-surface p-4 rounded-sm focus:outline-none transition-all duration-300 resize-y"
                 id="details"
+                name="message"
                 placeholder="Describe your industrial requirements, materials, and scale..."
                 rows="6"
+                required
               ></textarea>
             </div>
             <!-- Submit Asymmetry -->
             <div class="flex justify-end mt-6">
               <button
               class="bg-primary text-on-primary px-8 py-4 rounded font-bold text-lg hover:bg-primary-container transition-colors"
-                type="button"
+                type="submit"
               >
                 Submit Request
                 <span
@@ -445,10 +497,9 @@
           <p
             class="text-[#F7F9FF] opacity-60 font-body font-light tracking-wide text-sm max-w-sm mb-8 leading-relaxed"
           >
-            Transforming raw, rugged industrial
-            materials into pristine, high-value
-            assets through scientific preparation
-            and precision coating. Since 1992.
+            Cape Town Sandblasting & Powder Coating Services
+Welgelegen Farm, Steneveld Rd, Off Bottelary Rd
+Cape Town, Western Cape, South Africa, 7625
           </p>
           <div class="flex gap-6">
             <a
@@ -499,13 +550,7 @@
             <ul
               class="space-y-4 font-body font-light tracking-wide text-sm text-[#F7F9FF] opacity-60"
             >
-              <li>
-                <a
-                  class="text-[#F7F9FF] opacity-60 hover:text-[#E3A33F] transition-all duration-200 font-body font-light tracking-wide text-sm"
-                 
-                  >Welgelegen farm, Steneveld rd, off Bottelary Rd, Cape Town, 7625</a
-                >
-              </li>
+             
               <li>
                 <a
                   class="text-[#F7F9FF] opacity-60 hover:text-[#E3A33F] transition-all duration-200 font-body font-light tracking-wide text-sm"
@@ -539,11 +584,45 @@
         </div>
       </div>
       <div
-        class="text-4xl font-black opacity-10 absolute bottom-4 right-4 text-[#E3A33F] uppercase tracking-tighter"
+        class="text-4xl font-headline font-[950] italic opacity-10 absolute bottom-4 right-4 text-[#E3A33F] uppercase tracking-tighter"
       >
         COENIC
       </div>
     </footer>
-     <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
+     <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (mobileMenuButton && mobileMenu) {
+        const closeMobileMenu = () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        };
+
+        mobileMenuButton.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', String(isHidden));
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((menuLink) => {
+          menuLink.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+            closeMobileMenu();
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMobileMenu();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
